@@ -1,0 +1,6 @@
+python==3.6.3
+imutils==0.5.2
+face-recognition==1.2.3
+opencv-contrib-python==4.1.0.25
+pywin32==224
+
