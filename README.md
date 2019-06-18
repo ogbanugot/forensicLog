@@ -14,5 +14,9 @@ python eventlog.py
 ## Logs  
 Check the directory for the event logs and ./output for the video log
 
+## Train your own dataset  
+python encode_faces.py --dataset <path/to/dataset> --encodings encodings.pickle  
+directory structure should be;  
+/dataset/class e.g /dataset/ogban_ugot
 
 
