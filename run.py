@@ -18,6 +18,8 @@ import win32evtlogutil
 import winerror
 from twisted.internet import task, reactor
 
+
+global currentUsers
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-y", "--display", type=int, default=1,
@@ -86,6 +88,7 @@ def facialRec():
             
             # update the list of names
             names.append(name)
+            currentUsers = names
 
         # loop over the recognized faces
         for ((top, right, bottom, left), name) in zip(boxes, names):
@@ -190,6 +193,7 @@ def getEventLogs(server, logtype, logPath):
                     evt_type = str(evt_dict[ev_obj.EventType])
                 log.write("Event Date/Time: %s\n" % the_time)
                 log.write("Event ID / Type: %s / %s\n" % (evt_id, evt_type))
+                log.write("Currently Active User(s): %s\n" % currentUsers)
                 log.write("Record #%s\n" % record)
                 log.write("Source: %s\n\n" % source)
                 log.write(msg)
