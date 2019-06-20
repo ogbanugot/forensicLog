@@ -67,6 +67,7 @@ def facialRec():
                 for i in matchedIdxs:
                     name = data["names"][i]
                     counts[name] = counts.get(name, 0) + 1
+                    print("We have matched %s " % name)
 
                 # determine the recognized face with the largest number
                 # of votes (note: in the event of an unlikely tie Python
